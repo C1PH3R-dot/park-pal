@@ -1,0 +1,20 @@
+import { cn } from "@/lib/utils";
+import { motion, type HTMLMotionProps } from "framer-motion";
+
+interface GlassCardProps extends HTMLMotionProps<"div"> {
+  className?: string;
+  children: React.ReactNode;
+}
+
+const GlassCard = ({ className, children, ...props }: GlassCardProps) => {
+  return (
+    <motion.div
+      className={cn("glass rounded-2xl p-6", className)}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export default GlassCard;
